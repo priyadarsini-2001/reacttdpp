@@ -1,5 +1,56 @@
 function App()
 {
+  const show=(event)=>{
+    event.preventDefault()
+    console.log("submit button pressed")
+  } 
+  var unc=0,pwc=0 
+  const dis=(event)=>{
+    if(event.target.name==="un")
+      unc+=1
+    if(event.target.name==="pw")
+      pwc+=1
+    document.getElementById("r1").innerHTML=unc
+    document.getElementById("r2").innerHTML=pwc
+  }
+  return(
+    <form onSubmit={show}>
+      <input type="text"  onChange={(e)=>dis(e)} name="un" placeholder="Enter username"></input>
+      <br></br>
+      <input type="password"  onChange={(e)=>dis(e)} name="pw" placeholder="Enter password"></input>
+      <br></br>
+      <input type="submit"></input>
+      <input type="button" value="clickme"></input>
+      <input type="reset"></input>  
+      <button><b>clickme</b></button>
+      <div id="r1"></div>
+      <div id="r2"></div>  
+      </form>
+  )
+}
+export default App
+/*function App()
+{ 
+  var c=0
+  const dis1=(event)=>{
+    event.target.style.backgroundColor="red";
+    event.target.value=parseInt(event.target.value)+1
+}
+  const dis2=(event)=>{
+  event.target.style.backgroundColor="green";
+}
+  return(
+    <>
+    <h2>On blur Event</h2>
+    <input type="text" value={c} onBlur={(e)=>dis1(e)} onFocus={(e)=>dis2(e)}></input>
+    <input type="text" value={c}onBlur={(e)=>dis1(e)} onFocus={(e)=>dis2(e)}></input>
+    <input type="text" value={c}  onBlur={(e)=>dis1(e)} onFocus={(e)=>dis2(e)}></input>
+    </>
+  )
+}
+export default App
+/*function App()
+{
   const dis1=(event)=>{
     document.getElementById("t1").style.backgroundColor="white"
     document.getElementById("t2").style.backgroundColor="white"
