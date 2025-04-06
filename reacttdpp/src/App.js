@@ -1,4 +1,151 @@
-function App(props)
+function App()
+{
+  const dis1=(event)=>{
+    document.getElementById("t1").style.backgroundColor="white"
+    document.getElementById("t2").style.backgroundColor="white"
+    document.getElementById("t3").style.backgroundColor="white"
+    if(event.target.id==="t1")
+      document.getElementById("t1").style.backgroundColor="lightgreen" 
+    if(event.target.id==="t2")
+      document.getElementById("t2").style.backgroundColor="lightgreen"
+    if(event.target.id==="t3")
+    document.getElementById("t3").style.backgroundColor="lightgreen"
+
+  }
+  return(
+    <> 
+    <h1>onFocus Event</h1>
+    <input type="text" onFocus={(e)=>dis1(e)} id="t1"></input>
+    <input type="text" onFocus={(e)=>dis1(e)} id="t2"></input>
+    <input type="text" onFocus={(e)=>dis1(e)} id="t3"></input></>
+
+  )
+}
+export default App
+/*function App()
+{ 
+  const show=()=>{
+    if(document.getElementById("hid").type==="hidden")
+      document.getElementById("hid").type="text";
+    else
+    document.getElementById("hid").type="hidden";
+} 
+const copyph=()=>{
+  document.getElementById("hid").value=document.getElementById("ph").value
+}
+  
+  return(
+    <>
+    <input type="number" onChange={copyph} id="ph"></input>
+    <input  type="hidden" value="" id="hid"></input>
+    <input type="button" onClick={show} value="show/hide"></input>
+    </>
+  )
+} 
+export default App
+/*function App()
+{
+  return(
+    <form>
+      <input type="text" placeholder="Enter User Name:" value="priya"></input>
+      <br></br>
+      <input type="number" placeholder="Enter No:" min="100"max="2000"></input>
+      <br></br>
+      <label>Enter password:
+      <input type="password" placeholder="Enter password:"></input>
+      </label>
+     <br></br>
+     <input type="radio" name="gen" checked></input>Male
+     <input type="radio" name="gen" checked></input>Female
+     <input type="radio" name="gen" checked></input>Others
+     <br></br>
+     select course:
+     <input type="checkbox"></input>C
+     <input type="checkbox"></input>C++
+      <input type="checkbox"></input>JAVA
+<br></br>
+     Enter Address:
+     <textarea cols="20" rows="7"></textarea>
+     <br></br>
+     <select>
+      <option>January</option>
+      <option>February</option>
+      <option>March</option>
+      <option>April</option>
+      <option>May</option>
+      <option>June</option>
+</select> 
+<br></br>
+Enter Email:<input type="email"></input>
+select DOB:
+<input type="date"></input>
+select time:
+<input type="time"></input>
+<br></br> 
+<input type="week"></input>
+<br></br>
+<input type="file"></input>
+<br></br>
+<input type="range" min="0" max="7"></input>
+<br></br>
+<input type="hidden" value="100" name="hid"></input>
+<input type="reset" name="clr"></input>
+<input type="submit"></input>
+<input type="button" value="clickme"></input>
+<input type="reset" value="clear"></input>
+
+</form>
+  )
+}
+export default App
+/*function App(props)
+{ 
+  var tot=0
+  var subjectsnames=[]
+  
+  for (var v in props.myobj.subjects)
+  {
+    tot=tot+props.myobj.subjects[v]
+    subjectsnames.push(v) 
+    
+    console.log(v)
+}
+  return(
+    <>
+    <h1>Roll Number:{props.myobj.rno}</h1>
+    <h1>Student Name:{props.myobj.sname}</h1>
+    <ol>{subjectsnames.map((s)=><li>{s} mark:{props.myobj.subjects[s]}</li>)}</ol>
+    <h1>Total:{tot}</h1> 
+    <hr></hr>
+    
+    </>
+  )
+}
+export default App
+/*function App(props)
+{ 
+  
+  var tot=0
+  for (var v in props.myobj.subjects)
+  {
+    tot=tot+props.myobj.subjects[v]
+  console.log(v)
+}
+  return(
+    <>
+    <h1>Roll Number:{props.myobj.rno}</h1>
+    <h1>Student Name:{props.myobj.sname}</h1>
+    <h1>tamil Mark:{props.myobj.subjects["tamil"]}</h1>
+    <h1>english Mark:{props.myobj.subjects.english}</h1>
+    <h1>maths Mark:{props.myobj.subjects.maths}</h1>
+    <h1>science Mark:{props.myobj.subjects.science}</h1>
+    <h1>social Mark:{props.myobj.subjects["social"]}</h1> 
+    <h1>Total:{tot}</h1>
+    </>
+  )
+} 
+export default App
+/*function App(props)
 {
   return(
     <>

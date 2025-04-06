@@ -3,11 +3,21 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-
+var jsonobj={
+  rno:1,
+  sname:"priya",
+  subjects:{
+    tamil:99,
+    english:99,
+    maths:45,
+    science:60,
+    social:89
+  }
+}
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App rno="1001" sname="priya" mark="99"/>
+    <App myobj={jsonobj}/>
   </React.StrictMode>
 );
 
