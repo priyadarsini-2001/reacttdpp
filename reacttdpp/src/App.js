@@ -1,4 +1,85 @@
+import { useState } from "react"
 function App()
+{
+  const [gender,setGender]=useState("")
+  const dis=(e)=>{
+    
+    if (e.target.value==="male")
+    {
+      e.target.checked=true
+      setGender("male")
+    }
+    if(e.target.value==="female")
+      { 
+        e.target.checked=true
+      setGender("female")
+    }
+    if(e.target.value==="others")
+      { 
+        setGender("others")
+        e.target.checked=true
+    
+    }
+      
+  }
+  return(
+    <>
+    <input type="radio"  name="gen" onChange={(e)=>dis(e)} value="male"></input> 
+    <input type="radio"  name="gen" onChange={(e)=>dis(e)} value="female"></input>   
+    <input type="radio"  name="gen" onChange={(e)=>dis(e)}  value="others"></input>    
+    <br></br>
+    select gender:{gender}
+      </>
+  )
+} 
+export default App
+/*import { useState } from "react"
+function App()
+{    
+  const [rno,setRno]=useState(0)
+  const [sname,setSname]=useState("")
+  const [mark,setMark]=useState(0)
+  const dis=(e)=>{
+    if(e.target.id==="t1")
+      setRno(e.target.value)
+    if(e.target.id==="t2")
+      setSname(e.target.value)
+    if(e.target.id==="t3")
+      setMark(e.target.value)
+  }
+  return(
+    <>
+    <input type="text" id ="t1" onChange={(e)=>dis(e)} value={rno}></input><br></br>
+    <input type="text"  id="t2" onChange={(e)=>dis(e)} value={sname}></input><br></br>
+    <input type="text" id="t3"  onChange={(e)=>dis(e)} value={mark}></input>
+
+    </>
+  )
+}
+export default App
+/*import React from 'react'
+import { useState} from 'react' 
+
+const App=()=> { 
+  const [age,setAge]=useState(0)
+ // var v=100
+  
+  const show=(ev)=>{
+ //   v=v+1
+setAge(ev.target.value) 
+    console.log("----------",ev.target.value)
+  }
+  return (
+    <>
+    <h1>Value attribute issue in textbox</h1>
+    <input type="text" onChange={(e)=>show(e)} value={age}></input>
+  </>
+  )
+}
+
+export default App
+
+/*function App()
 {
   const show=(event)=>{
     event.preventDefault()
